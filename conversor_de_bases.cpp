@@ -21,7 +21,7 @@ char valueToChar(int v) {
     return caractere[v];
 }
 
-// Remove zeros à esquerda 
+// Remove zeros à esquerda  |  loop enquanto char for igual a 0 -> apaga
 string trim(string s) {
     while (s.size() > 1 && s[0] == '0')
         s.erase(0, 1);
@@ -30,7 +30,7 @@ string trim(string s) {
 
 
 
-// divide string decimal por base, retorna resto'
+// divide string decimal por base  |  acumula no carry numero por numero
 string divide(string num, int base, int &resto) {
     string result = "";
     long long carry = 0;
@@ -45,7 +45,7 @@ string divide(string num, int base, int &resto) {
     return trim(result);
 }
 
-// soma  |  resultado = dígito_a + dígito_b + carry
+// soma  |  resultado = dígito_a + dígito_b + carry  |  mais de um char, "sobe um" no carry
 string add(string a, string b) {
     string res = "";
     int carry = 0;
@@ -70,7 +70,7 @@ string add(string a, string b) {
     return trim(res);
 }
 
-// multiplicação  |  resultado = dígito * base + carry
+// multiplicação  |  resultado = dígito * base + carry(excesso da multiplicaçao anterior)
 string multiply(string a, int b) {
     string res = "";
     int carry = 0;
@@ -90,7 +90,9 @@ string multiply(string a, int b) {
     return trim(res);
 }   
 
-// Converte para decimal  |  resultado = resultado × base + dígito
+//========== CONVERSÕES ===========
+
+// Converte para decimal  |  resultado = resultado × base + dígito (formula Honer)
 string toDecimal(string num, int base) {
     string result = "0";
 
@@ -104,7 +106,7 @@ string toDecimal(string num, int base) {
     return result;
 }
 
-// Converte decimal → qualquer base
+// Converte decimal → qualquer base  |  divide o numero pela base e acumula os restos
 string fromDecimal(string num, int base) {
     string result = "";
 
