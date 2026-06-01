@@ -54,8 +54,10 @@ fromDecimal() → converte decimal para qualquer base
 🚀 Como compilar e executar
 Compilador C++ (g++, MinGW ou MSVC)
 Suporte a C++11 ou superior
+
 💻 Compilação (g++)
 g++ main.cpp -o conversor
+
 ▶️ Execução
 ./conversor
 
